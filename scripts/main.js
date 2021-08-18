@@ -1,4 +1,3 @@
-let tasksList = [];
 let todoList = document.querySelector('#list');
 let task = document.getElementsByTagName('#list li')
 let createdTaskSpace = document.getElementById('createTask')
@@ -21,13 +20,14 @@ showTasks();
 function validateTask() {
 
     let inputValue = document.getElementById("contentInputTask").value;
-    let obj = {
-        task: inputValue,
-        category: 'category'
+    let getLocalStorageData = localStorage.getItem("New Todo");
+    if (getLocalStorageData == null) {
+        listArray = [];
+    } else {
+        listArray = JSON.parse(getLocalStorageData);
     }
-
-    tasksList.push(obj);
-
+    listArray.push(inputValue);
+    localStorage.setItem("New Todo", JSON.stringify(listArray));
     showTasks();
 }
 
@@ -37,23 +37,34 @@ function checkedTask(event) {
 
 function showTasks() {
 
-    let newList = "";
-
-    tasksList.forEach((element, index) => {
-
-        newList += `<li onclick="checkedTask(event)"><i class="far fa-circle"></i>${element.task}<span onclick="deleteTask(${index})"><i class="fas fa-trash"></i></span></li>`
-
+    let inputValue = document.getElementById("contentInputTask").value;
+    let getLocalStorageData = localStorage.getItem("New Todo");
+    if (getLocalStorageData == null) {
+        listArray = [];
+    } else {
+        listArray = JSON.parse(getLocalStorageData);
+    }
+    const showWaiting = document.querySelector(".waintingTasks");
+    showWaiting.textContent = listArray.length; 
+    // if(listArray.length > 0){ 
+    //   deleteAllBtn.classList.add("active"); 
+    // }else{
+    //   deleteAllBtn.classList.remove("active"); 
+    // }
+    let newLiTag = "";
+    listArray.forEach((element, index) => {
+        newLiTag += `<li onclick="checkedTask(event)"><i class="far fa-circle"></i><p>${element}</p><span class="icon" onclick="deleteTask(${index})"><i class="fas fa-trash"></i></span></li>`;
     });
-
-
-    todoList.innerHTML = newList;
-
+    todoList.innerHTML = newLiTag;
     document.getElementById("contentInputTask").value = '';
-
     createTask.classList.remove("show");
 }
 
 function deleteTask(index) {
-    tasksList.splice(index, 1)
+
+    let getLocalStorageData = localStorage.getItem("New Todo");
+    listArray = JSON.parse(getLocalStorageData);
+    listArray.splice(index, 1);
+    localStorage.setItem("New Todo", JSON.stringify(listArray));
     showTasks();
 }

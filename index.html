@@ -22,40 +22,61 @@
     </header>
 
     <div id="homePage">
+        <h1>What's up Jon!</h1>
+        <div id="categories">
+            <h3>Categories</h3>
+            <div class="containCat">
+                <div class="catCard">
+                    <span>nb of task</span>
+                    <h5>name category</h5>
+                    <span>graphique</span>
+                </div>
+            </div>
+        </div>
         <div id="taskList">
+            <h3>Today's Task</h3>
             <ul id="list"></ul>
         </div>
-        <div id="addTask" onclick="newTask()">
-            <i class="fas fa-plus-circle"></i>
+        <div id="count">
+            <p>You have <span class="waintingTasks"></span> wainting tasks</p>
         </div>
     </div>
+    <script src="script.js"></script>
+</body>
 
-    <div id="createTask" class="overlay">
-        <input type="text" name="" id="contentInputTask" placeholder="create task">
-        <input type="submit" value="send" onclick="validateTask()">
-    </div>
+</html>
+</div>
+<div id="addTask" onclick="newTask()">
+    <i class="fas fa-plus-circle"></i>
+</div>
+</div>
 
-    <div id="userSpace" class="overlay">
-        <div id="userInfo">
-            <div class="picture">
-                <i class="far fa-user-circle"></i>
-            </div>
-            <h2>FirstName</h2>
-            <h3>LastName</h3>
-            <a href="#" onclick="backTask()"><i class="fas fa-arrow-circle-left"></i></a>
+<div id="createTask" class="overlay">
+    <input type="text" name="" id="contentInputTask" placeholder="create task">
+    <input type="submit" value="send" onclick="validateTask()">
+</div>
+
+<div id="userSpace" class="overlay">
+    <div id="userInfo">
+        <div class="picture">
+            <i class="far fa-user-circle"></i>
         </div>
-        <div id="options">
-            <a href="#">Templates</a>
-            <a href="#">Categories</a>
-            <a href="#">Analytics</a>
-            <a href="#">Settings</a>
-        </div>
-        <div id="gaphicalFollow"></div>
+        <h2>FirstName</h2>
+        <h3>LastName</h3>
+        <a href="#" onclick="backTask()"><i class="fas fa-arrow-circle-left"></i></a>
     </div>
+    <div id="options">
+        <a href="#">Templates</a>
+        <a href="#">Categories</a>
+        <a href="#">Analytics</a>
+        <a href="#">Settings</a>
+    </div>
+    <div id="gaphicalFollow"></div>
+</div>
 
 
 
-    <script src="./scripts/main.js"></script>
+<script src="./scripts/main.js"></script>
 </body>
 
 </html>

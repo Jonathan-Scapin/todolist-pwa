@@ -1,7 +1,14 @@
 @import "./libs/reset.scss";
 
+body {
+    margin: 0 1rem;
+    font-family: sans-serif;
+    background-color: rgb(253, 250, 250);
+}
+
 nav {
     display: flex;
+    margin-bottom: 2rem;
 
     a {
         cursor: default;
@@ -18,12 +25,43 @@ nav {
     }
 }
 
-#list{
-    padding: 1rem;
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+h3 {
+    text-transform: uppercase;
+    color: gray;
+}
+
+.containCat {
+    display: flex;
+
+    .catCard {
+        margin: 2rem 0;
+        padding: 1rem;
+        border-radius: 20px;
+        background-color: white;
+    }
+}
+
+#list {
+    padding: 1rem 0;
 
     li {
+        display: flex;
+        justify-content: space-between;
+        background-color: white;
         padding: 1rem;
-        background-color: aliceblue;
+        margin-bottom: 0.2rem;
+        border-radius: 20px;
+
+            p{
+                width: 100%;
+                word-break: break-word;
+            }
     }
 }
 
@@ -49,11 +87,19 @@ nav {
 }
 
 .chekedTask {
-    background-color: lightgreen;
+    p {
+        text-decoration: line-through;
+    }
 }
 
 li {
     cursor: pointer;
+}
+
+#count {
+    position: fixed;
+    bottom: 40px;
+    left: 20px;
 }
 
 #userSpace,
