@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a id="menu" href="#" onclick="showProfil()"><i class="fas fa-bars"></i></a>
+            <a href="#"><i class="fas fa-search"></i></a>
+            <a href="#"><i class="far fa-bell"></i></a>
+            <a href="#"><i class="fas fa-adjust"></i></a>
+        </nav>
+    </header>
+
+    <div id="homePage">
+        <div id="taskList">
+            <ul id="list"></ul>
+        </div>
+        <div id="addTask" onclick="newTask()">
+            <i class="fas fa-plus-circle"></i>
+        </div>
+    </div>
+
+    <div id="createTask" class="overlay">
+        <input type="text" name="" id="contentInputTask" placeholder="create task">
+        <input type="submit" value="send" onclick="validateTask()">
+    </div>
+
+    <div id="userSpace" class="overlay">
+        <div id="userInfo">
+            <div class="picture">
+                <i class="far fa-user-circle"></i>
+            </div>
+            <h2>FirstName</h2>
+            <h3>LastName</h3>
+            <a href="#" onclick="backTask()"><i class="fas fa-arrow-circle-left"></i></a>
+        </div>
+        <div id="options">
+            <a href="#">Templates</a>
+            <a href="#">Categories</a>
+            <a href="#">Analytics</a>
+            <a href="#">Settings</a>
+        </div>
+        <div id="gaphicalFollow"></div>
+    </div>
+
+
+
+    <script src="./scripts/main.js"></script>
+</body>
+
+</html>

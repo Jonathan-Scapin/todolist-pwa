@@ -1,0 +1,108 @@
+@import "./libs/reset.scss";
+
+nav {
+    display: flex;
+
+    a {
+        cursor: default;
+    }
+
+    a:first-child {
+        flex-grow: 2;
+    }
+
+    i {
+        padding: 1rem;
+        cursor: pointer;
+        color: gray;
+    }
+}
+
+#list{
+    padding: 1rem;
+
+    li {
+        padding: 1rem;
+        background-color: aliceblue;
+    }
+}
+
+#addTask {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    i {
+        cursor: pointer;
+        font-size: 4rem;
+        color: lightblue;
+    }
+
+}
+
+.fa-circle {
+    margin-right: 1rem;
+}
+
+.fa-trash {
+    margin-left: 1rem;
+}
+
+.chekedTask {
+    background-color: lightgreen;
+}
+
+li {
+    cursor: pointer;
+}
+
+#userSpace,
+#createTask {
+
+    display: none;
+
+    &.show {
+        display: block;
+
+        &#userSpace {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            left: 0;
+        }
+    }
+
+    &.overlay {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+    }
+
+}
+
+#userSpace {
+    background-color: lightblue;
+    top: 0;
+
+    #userInfo {
+        margin: 1rem;
+        position: relative;
+
+        a {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+
+    #options {
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+#createTask {
+    background-color: lightcoral;
+    top: 0;
+}
