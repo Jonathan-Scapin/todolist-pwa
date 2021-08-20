@@ -17,31 +17,27 @@
             <a id="menu" href="#" onclick="showProfil()"><i class="fas fa-bars"></i></a>
             <a href="#"><i class="fas fa-search"></i></a>
             <a href="#"><i class="far fa-bell"></i></a>
-            <a href="#"><i class="fas fa-adjust"></i></a>
+            <a id="darkMode" href="#" onclick="toggleDarkMode()"><i class="fas fa-adjust"></i></a>
         </nav>
     </header>
 
+    <div id="connexion" class="overlay">
+        <input type="email" name="email" id="email" placeholder="email">
+        <input type="password" name="password" id="password" placeholder="password">
+        <button type="submit">connexion</button>
+        <a href="#" onclick="backTask()"><i class="fas fa-chevron-left"></i></a>
+    </div>
+
     <div id="homePage">
         <h1>What's up Jon!</h1>
-        <div id="categories">
-            <h3>Categories</h3>
-            <div class="containCat">
-                <div class="catCard">
-                    <span>nb of task</span>
-                    <h5>name category</h5>
-                    <span>graphique</span>
-                </div>
-            </div>
-        </div>
         <div id="taskList">
-            <h3>Today's Task</h3>
+            <h3 id="showDate"></h3>
             <ul id="list"></ul>
         </div>
         <div id="count">
             <p>You have <span class="waintingTasks"></span> wainting tasks</p>
         </div>
     </div>
-    <script src="script.js"></script>
 </body>
 
 </html>
@@ -57,29 +53,12 @@
     </div>
     <input type="text" name="" id="contentInputTask" placeholder="Enter new task">
     <div class="taskOptions"></div>
-    <button id="validateTaskBtn" type="submit" onclick="validateTask()">New task <i class='fas fa-chevron-up'></i></button>
+    <button id="validateTaskBtn" type="submit" onclick="validateTask()">New task <i
+            class='fas fa-chevron-up'></i></button>
 </div>
-
-<div id="userSpace" class="overlay">
-    <div id="userInfo">
-        <div class="picture">
-            <div class="imgProfil"></div>
-        </div>
-        <h2>Jon</h2>
-        <h3>Ledev</h3>
-        <a href="#" onclick="backTask()"><i class="fas fa-chevron-left"></i></a>
-    </div>
-    <div id="options">
-        <a href="#"><i class="fas fa-th-large"></i> Categories</a>
-        <a href="#"><i class="fas fa-chart-pie"></i> Analytics</a>
-        <a href="#"><i class="fas fa-cog"></i> Settings</a>
-    </div>
-    <div id="gaphicalFollow"></div>
-</div>
-
-
 
 <script src="./scripts/main.js"></script>
+<script src="./scripts/date.js"></script>
 </body>
 
 </html>

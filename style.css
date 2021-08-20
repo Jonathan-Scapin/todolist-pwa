@@ -50,7 +50,7 @@ a {
 body {
   margin: 0 1rem;
   font-family: sans-serif;
-  background-color: #fdfafa;
+  background-color: #F7F6F3;
 }
 
 nav {
@@ -66,7 +66,7 @@ nav a:first-child {
 nav i {
   padding: 1rem;
   cursor: pointer;
-  color: gray;
+  color: #767B83;
 }
 
 h1 {
@@ -77,17 +77,7 @@ h1 {
 
 h3 {
   text-transform: uppercase;
-  color: gray;
-}
-
-.containCat {
-  display: flex;
-}
-.containCat .catCard {
-  margin: 2rem 0;
-  padding: 1rem;
-  border-radius: 20px;
-  background-color: white;
+  color: #767B83;
 }
 
 #list {
@@ -96,10 +86,7 @@ h3 {
 #list li {
   display: flex;
   justify-content: space-between;
-  background-color: white;
   padding: 1rem;
-  margin-bottom: 0.2rem;
-  border-radius: 20px;
 }
 #list li p {
   width: 100%;
@@ -139,99 +126,61 @@ li {
   left: 20px;
 }
 
-#userSpace,
+#connexion,
 #createTask {
   display: none;
 }
-#userSpace.show,
+#connexion.show,
 #createTask.show {
   display: block;
 }
-#userSpace.show#userSpace,
-#createTask.show#userSpace {
+#connexion.show#connexion,
+#createTask.show#connexion {
   display: flex;
   flex-direction: column;
-  padding-top: 2rem;
-  padding-left: 2rem;
+  justify-content: center;
+  align-items: center;
   left: 0;
 }
-#userSpace.overlay,
+#connexion.overlay,
 #createTask.overlay {
   position: fixed;
+  top: 0;
   width: 100%;
   height: 100%;
+  background-color: #F7F6F3;
+  z-index: 1;
 }
 
-#userSpace {
-  background-color: #121b68;
-  top: 0;
-  color: white;
+#connexion input {
+  width: 80%;
+  border: none;
+  background-color: white;
+  font-size: 2rem;
+  margin: 0.5rem 0;
 }
-#userSpace #userInfo {
-  margin: 1rem;
-  position: relative;
+#connexion button {
+  border: none;
+  background-color: #767B83;
+  color: #F7F6F3;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
 }
-#userSpace #userInfo h2 {
-  padding: 2rem 0 1rem;
-}
-#userSpace #userInfo h2,
-#userSpace #userInfo h3 {
-  color: white;
-  font-size: 1.5rem;
-}
-#userSpace #userInfo a {
-  position: absolute;
-  top: 0;
-  right: 70px;
-  width: 45px;
-  height: 45px;
-  border: 1px solid white;
-  border-radius: 25px;
-}
-#userSpace #userInfo i {
-  width: 100%;
-  height: 100%;
-  color: white;
+#connexion a {
   display: flex;
-  align-items: center;
   justify-content: center;
-}
-#userSpace #userInfo .picture {
-  display: flex;
   align-items: center;
-  justify-content: center;
-  width: 80px;
-  height: 80px;
-  border: 2px solid white;
-  border-radius: 50px;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #767B83;
+  margin-top: 2rem;
+  border-radius: 50%;
 }
-#userSpace #userInfo .imgProfil {
-  width: 75px;
-  height: 75px;
-  border-radius: 50px;
-  background-image: url("../icons/photo cv.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-#userSpace #options {
-  display: flex;
-  flex-direction: column;
-  margin: 1rem;
-}
-#userSpace #options a {
-  color: white;
-  padding: 1.5rem 0;
-  font-weight: 100;
-}
-#userSpace #options i {
-  margin-right: 1rem;
+#connexion a i {
+  color: #767B83;
 }
 
-#createTask {
-  top: 0;
-  left: 0;
-  background-color: #fdfafa;
-}
 #createTask .nulledTask {
   position: absolute;
   right: 20px;
@@ -257,12 +206,17 @@ li {
   border: none;
   border-radius: 25px;
   padding: 1rem 1.5rem;
-  background-color: #255df7;
-  color: white;
+  background-color: #5C5F65;
+  color: #F7F6F3;
   font-size: 1rem;
 }
 #createTask #validateTaskBtn i {
   margin-left: 1rem;
+}
+
+.darkMode {
+  background-color: #5C5F65 !important;
+  color: #F7F6F3 !important;
 }
 
 /*# sourceMappingURL=style.css.map */

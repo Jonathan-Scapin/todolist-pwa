@@ -1,18 +1,18 @@
 let todoList = document.querySelector('#list');
 let task = document.getElementsByTagName('#list li')
 let createdTaskSpace = document.getElementById('createTask')
-let userSpace = document.getElementById('userSpace')
+let connexion = document.getElementById('connexion')
 
 function newTask() {
     createdTaskSpace.classList.add("show")
 }
 
 function showProfil() {
-    userSpace.classList.add("show")
+    connexion.classList.add("show")
 }
 
 function backTask() {
-    userSpace.classList.remove("show")
+    connexion.classList.remove("show")
     createdTaskSpace.classList.remove("show")
 }
 
@@ -71,4 +71,10 @@ function deleteTask(index) {
     listArray.splice(index, 1);
     localStorage.setItem("New Todo", JSON.stringify(listArray));
     showTasks();
+}
+
+function toggleDarkMode() {
+    document.body.classList.toggle("darkMode");
+    connexion.classList.toggle("darkMode");
+    createdTaskSpace.classList.toggle("darkMode");
 }
