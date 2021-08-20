@@ -13,6 +13,7 @@ function showProfil() {
 
 function backTask() {
     userSpace.classList.remove("show")
+    createdTaskSpace.classList.remove("show")
 }
 
 showTasks();
@@ -32,7 +33,10 @@ function validateTask() {
 }
 
 function checkedTask(event) {
+    console.log(event)
+
     event.target.classList.toggle('chekedTask');
+    event.nextElementSibling.classList.toggle('chekedTask');
 }
 
 function showTasks() {
@@ -53,7 +57,7 @@ function showTasks() {
     // }
     let newLiTag = "";
     listArray.forEach((element, index) => {
-        newLiTag += `<li onclick="checkedTask(event)"><i class="far fa-circle"></i><p>${element}</p><span class="icon" onclick="deleteTask(${index})"><i class="fas fa-trash"></i></span></li>`;
+        newLiTag += `<li><i class="far fa-circle" onclick="checkedTask(event)"></i><p>${element}</p><span class="icon" onclick="deleteTask(${index})"><i class="fas fa-trash"></i></span></li>`;
     });
     todoList.innerHTML = newLiTag;
     document.getElementById("contentInputTask").value = '';

@@ -52,24 +52,27 @@
 </div>
 
 <div id="createTask" class="overlay">
-    <input type="text" name="" id="contentInputTask" placeholder="create task">
-    <input type="submit" value="send" onclick="validateTask()">
+    <div class="nulledTask" onclick="backTask()">
+        <i class="far fa-times-circle"></i>
+    </div>
+    <input type="text" name="" id="contentInputTask" placeholder="Enter new task">
+    <div class="taskOptions"></div>
+    <button id="validateTaskBtn" type="submit" onclick="validateTask()">New task <i class='fas fa-chevron-up'></i></button>
 </div>
 
 <div id="userSpace" class="overlay">
     <div id="userInfo">
         <div class="picture">
-            <i class="far fa-user-circle"></i>
+            <div class="imgProfil"></div>
         </div>
-        <h2>FirstName</h2>
-        <h3>LastName</h3>
-        <a href="#" onclick="backTask()"><i class="fas fa-arrow-circle-left"></i></a>
+        <h2>Jon</h2>
+        <h3>Ledev</h3>
+        <a href="#" onclick="backTask()"><i class="fas fa-chevron-left"></i></a>
     </div>
     <div id="options">
-        <a href="#">Templates</a>
-        <a href="#">Categories</a>
-        <a href="#">Analytics</a>
-        <a href="#">Settings</a>
+        <a href="#"><i class="fas fa-th-large"></i> Categories</a>
+        <a href="#"><i class="fas fa-chart-pie"></i> Analytics</a>
+        <a href="#"><i class="fas fa-cog"></i> Settings</a>
     </div>
     <div id="gaphicalFollow"></div>
 </div>
