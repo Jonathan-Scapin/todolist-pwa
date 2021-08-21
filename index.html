@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="/icons/favicon.png" type="image/x-icon">
     <title>Document</title>
 </head>
 
@@ -38,27 +39,24 @@
             <p>You have <span class="waintingTasks"></span> wainting tasks</p>
         </div>
     </div>
-</body>
 
-</html>
-</div>
-<div id="addTask" onclick="newTask()">
-    <i class="fas fa-plus-circle"></i>
-</div>
-</div>
-
-<div id="createTask" class="overlay">
-    <div class="nulledTask" onclick="backTask()">
-        <i class="far fa-times-circle"></i>
+    <div id="addTask" onclick="newTask()">
+        <i class="fas fa-plus-circle"></i>
     </div>
-    <input type="text" name="" id="contentInputTask" placeholder="Enter new task">
-    <div class="taskOptions"></div>
-    <button id="validateTaskBtn" type="submit" onclick="validateTask()">New task <i
-            class='fas fa-chevron-up'></i></button>
-</div>
 
-<script src="./scripts/main.js"></script>
-<script src="./scripts/date.js"></script>
+
+    <div id="createTask" class="overlay">
+        <div class="nulledTask" onclick="backTask()">
+            <i class="far fa-times-circle"></i>
+        </div>
+        <input type="text" name="" id="contentInputTask" placeholder="Enter new task">
+        <button id="validateTaskBtn" type="submit" onclick="validateTask()">New task <i
+                class='fas fa-chevron-up'></i>
+        </button>
+    </div>
+
+    <script src="./scripts/main.js"></script>
+    <script src="./scripts/date.js"></script>
 </body>
 
 </html>
