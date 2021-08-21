@@ -5,19 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="/icons/favicon.png" type="image/x-icon">
-    <!-- PWA -->
-    <link rel="manifest" href="manifest.json">
-    <title>TodoList-PWA</title>
-    <script>
-        window.addEventListener('load', () => {
-            if ("serviceWorker" in navigator) {
-                navigator.serviceWorker.register('/service-worker.js');
-            }
-        })
-    </script>
+    <title>TodoList-PWA-offline</title>
 </head>
 
 <body>
@@ -27,13 +16,13 @@
             <a id="menu" href="#" onclick="showProfil()"><i class="fas fa-bars"></i></a>
             <a href="#"><i class="fas fa-search"></i></a>
             <a href="#"><i class="far fa-bell"></i></a>
-            <a id="darkMode" href="#" onclick="toggleDarkMode()"><i class="fas fa-adjust"></i></a>
+            <a id="darkMode" href="#" onclick="toggleDarkMode()"><i class="fas fa-adjust">DK</i></a>
         </nav>
     </header>
 
     <div id="homePage">
         <h1>What's up Jon!</h1>
-        <button type="button">⤾ Reload</button>
+
         <div id="taskList">
             <h3 id="showDate"></h3>
             <ul id="list"></ul>
@@ -44,7 +33,8 @@
     </div>
 
     <div id="addTask" onclick="newTask()">
-        <i class="fas fa-plus-circle"></i>
+        <!-- <i class="fas fa-plus-circle"></i> -->
+        <span>+</span>
     </div>
 
     <div id="createTask" class="overlay">
@@ -58,40 +48,29 @@
 
     <script src="./scripts/main.js"></script>
     <script src="./scripts/date.js"></script>
-        <!-- Inline the page's JavaScript file. -->
-        <script>
-            // Manual reload feature.
-            document.querySelector("button").addEventListener("click", () => {
-              window.location.reload();
-            });
-      
-            // Listen to changes in the network state, reload when online.
-            // This handles the case when the device is completely offline.
-            window.addEventListener('online', () => {
-              window.location.reload();
-            });
-      
-            // Check if the server is responding and reload the page if it is.
-            // This handles the case when the device is online, but the server
-            // is offline or misbehaving.
-            async function checkNetworkAndReload() {
-              try {
+
+    <!-- Inline the page's JavaScript file. -->
+    <script>
+        window.addEventListener('online', () => {
+            window.location.reload();
+        });
+
+        async function checkNetworkAndReload() {
+            try {
                 const response = await fetch('.');
-                // Verify we get a valid response from the server
+
                 if (response.status >= 200 && response.status < 500) {
-                  window.location.reload();
-                  return;
+                    window.location.reload();
+                    return;
                 }
-              } catch {
-                // Unable to connect to the server, ignore.
-              }
-              window.setTimeout(checkNetworkAndReload, 2500);
+            } catch {
+
             }
-      
-            checkNetworkAndReload();
-          </script>
+            window.setTimeout(checkNetworkAndReload, 10000);
+        }
+
+        checkNetworkAndReload();
+    </script>
 </body>
 
 </html>
-
-

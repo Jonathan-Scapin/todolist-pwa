@@ -57,7 +57,7 @@ function showTasks() {
     // }
     let newLiTag = "";
     listArray.forEach((element, index) => {
-        newLiTag += `<li><i class="far fa-circle" onclick="checkedTask(event)"></i><p>${element}</p><span class="icon" onclick="deleteTask(${index})"><i class="fas fa-trash"></i></span></li>`;
+        newLiTag += `<li><i class="far fa-circle" onclick="checkedTask(event)">o</i><p>${element}</p><span class="icon" onclick="deleteTask(${index})"><i class="fas fa-trash">-</i></span></li>`;
     });
     todoList.innerHTML = newLiTag;
     document.getElementById("contentInputTask").value = '';
