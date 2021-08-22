@@ -5,5 +5,9 @@
 * tasklist working in localhost
 * user space add (inprogress)
 * add categories (inprogress)
-#### 0.2 : (coming soon)
-* objective add pwa mode
+#### 0.2 : 
+* pwa basic mode OK
+
+You can install this apps on android/ios/mac/windows devices
+
+#### 0.3 : in progress

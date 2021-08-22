@@ -12,6 +12,12 @@ body {
     background-color: $primary;
 }
 
+svg {
+    width: 16px;
+    cursor: pointer;
+    color: $gray-medium;
+}
+
 nav {
     display: flex;
     margin-bottom: 2rem;
@@ -24,10 +30,8 @@ nav {
         flex-grow: 2;
     }
 
-    i {
+    svg {
         padding: 1rem;
-        cursor: pointer;
-        color: $gray-medium;
     }
 }
 
@@ -62,10 +66,9 @@ h3 {
     bottom: 20px;
     right: 20px;
 
-    i {
-        cursor: pointer;
-        font-size: 4rem;
+    svg {
         color: lightblue;
+        width: 50px;
     }
 
 }
@@ -78,10 +81,9 @@ h3 {
     margin-left: 1rem;
 }
 
-.chekedTask {
-    p {
-        text-decoration: line-through;
-    }
+.checked {
+    text-decoration: line-through;
+    opacity: 0.5;
 }
 
 li {
@@ -149,10 +151,6 @@ li {
         border: 2px solid $gray-medium;
         margin-top: 2rem;
         border-radius: 50%;
-
-        i{
-            color: $gray-medium;
-        }
     }
 }
 
@@ -162,10 +160,6 @@ li {
         position: absolute;
         right: 20px;
         top: 20px;
-
-        i {
-            font-size: 2rem;
-        }
     }
 
     #contentInputTask {
@@ -191,7 +185,7 @@ li {
         color: $primary;
         font-size: 1rem;
 
-        i {
+        svg {
             margin-left: 1rem;
         }
 

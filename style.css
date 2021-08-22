@@ -53,6 +53,12 @@ body {
   background-color: #F7F6F3;
 }
 
+svg {
+  width: 16px;
+  cursor: pointer;
+  color: #767B83;
+}
+
 nav {
   display: flex;
   margin-bottom: 2rem;
@@ -63,10 +69,8 @@ nav a {
 nav a:first-child {
   flex-grow: 2;
 }
-nav i {
+nav svg {
   padding: 1rem;
-  cursor: pointer;
-  color: #767B83;
 }
 
 h1 {
@@ -98,10 +102,9 @@ h3 {
   bottom: 20px;
   right: 20px;
 }
-#addTask i {
-  cursor: pointer;
-  font-size: 4rem;
+#addTask svg {
   color: lightblue;
+  width: 50px;
 }
 
 .fa-circle {
@@ -112,8 +115,9 @@ h3 {
   margin-left: 1rem;
 }
 
-.chekedTask p {
+.checked {
   text-decoration: line-through;
+  opacity: 0.5;
 }
 
 li {
@@ -177,17 +181,11 @@ li {
   margin-top: 2rem;
   border-radius: 50%;
 }
-#connexion a i {
-  color: #767B83;
-}
 
 #createTask .nulledTask {
   position: absolute;
   right: 20px;
   top: 20px;
-}
-#createTask .nulledTask i {
-  font-size: 2rem;
 }
 #createTask #contentInputTask {
   position: absolute;
@@ -210,7 +208,7 @@ li {
   color: #F7F6F3;
   font-size: 1rem;
 }
-#createTask #validateTaskBtn i {
+#createTask #validateTaskBtn svg {
   margin-left: 1rem;
 }
 
